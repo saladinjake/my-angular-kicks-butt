@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 
-import { EmployeeService } from '../shared/employee.service';
-import { Employee } from '../shared/employee.model';
+import { EmployeeService } from '../core/shared/sample.service';
+import { Employee } from '../core/shared/sample.model';
 
 declare var M: any;
 
@@ -15,7 +15,7 @@ declare var M: any;
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(public employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.resetForm();
@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) { //CREATE OR UPDATE
+  // onSubmit() {
     if (form.value._id == "") {
       this.employeeService.postEmployee(form.value).subscribe((res) => {
         this.resetForm(form);
@@ -58,7 +59,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onEdit(emp: Employee) {
-    this.employeeService.selectedEmployee = emp;
+     this.employeeService.selectedEmployee = emp;
   }
 
   onDelete(_id: string, form: NgForm) {

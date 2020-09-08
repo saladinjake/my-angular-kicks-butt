@@ -3,7 +3,7 @@ var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 
 var { Employee } = require('../models/sample.model');
-
+var id = null ;
 router.get('/', (req, res) => {
     Employee.find((err, docs) => {
         if (!err) { res.send(docs); }
@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
-
-    Employee.findById(req.params.id, (err, doc) => {
+    id = req.params.id;
+    Employee.findById(id, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Retriving Employee :' + JSON.stringify(err, undefined, 2)); }
     });
@@ -41,7 +41,8 @@ router.put('/:id', (req, res) => {
         office: req.body.office,
         salary: req.body.salary,
     };
-    Employee.findByIdAndUpdate(req.params.id, { $set: emp }, { new: true }, (err, doc) => {
+    id = req.params.id;
+    Employee.findByIdAndUpdate(id, { $set: emp }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Employee Update :' + JSON.stringify(err, undefined, 2)); }
     });
@@ -49,8 +50,8 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
-
-    Employee.findByIdAndRemove(req.params.id, (err, doc) => {
+    id = req.params.id;
+    Employee.findByIdAndRemove(id, (err, doc) => {
         if (!err) { res.send(doc); }
         else { console.log('Error in Employee Delete :' + JSON.stringify(err, undefined, 2)); }
     });
