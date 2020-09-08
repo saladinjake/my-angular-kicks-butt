@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent implements OnInit {
-
+  widget: string = 'nil';
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  setWidgetView( widgetView: string){
+     this.widget = widgetView
+  }
+
+
 
 }

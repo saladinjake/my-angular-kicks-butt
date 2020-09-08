@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
-
+  modalTypes: [{
+    default:string,
+  }] = [{default:''}] //,'bs-example-modal-lg','bs-example-modal-lg'
   constructor() { }
 
   ngOnInit(): void {

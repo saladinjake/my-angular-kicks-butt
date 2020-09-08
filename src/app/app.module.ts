@@ -23,7 +23,7 @@ import { UsersidebarComponent } from './core/sidebar/usersidebar/usersidebar.com
 import { AdminsidebarComponent } from './core/sidebar/adminsidebar/adminsidebar.component';
 
 //user authorized components
-import { LandingComponent } from './dashboard/landing/landing.component';
+import { LandingComponent } from './dashboard/components/landing/landing.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 //widgets component

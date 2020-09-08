@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cardbox.component.css']
 })
 export class CardboxComponent implements OnInit {
-
+  title:string ="Hello";
+  content : string = "content here"
   constructor() { }
 
   ngOnInit(): void {
