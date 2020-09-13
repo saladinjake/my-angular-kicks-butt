@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, '../dist')))
 
 app.post('/register', (req, res) => {
   const newUser = new User({
-    name: req.body.fullName,
+    username: req.body.username,
     email: req.body.email,
   })
   newUser.password = newUser.generateHash(req.body.password);

@@ -20,14 +20,25 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   user: User = {
     email: '',
-    password: ''
+    password: '',
+    firstname:'',
+    lastname:'',
+    phoneNumber:'',
+    username:'',
+    user_type:''
   };
   constructor(private authService: AuthService, private _router: Router) { }
 
   ngOnInit() {
   }
   login(theUser: User) {
-    this.authService.login(theUser);
-    this._router.navigate(['/dashboard']);
+    //old
+    // this.authService.login(theUser);
+    // this._router.navigate(['/dashboard']);
+    this.authService.login(theUser).subscribe(data => {
+      console.log(data);
+      this._router.navigate(['/dashboard']);
+      localStorage.setItem('user', JSON.stringify(data));
+    });
   }
 }
