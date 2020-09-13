@@ -108,7 +108,7 @@
 				</div>
 
 				<div class="panel-body p-t-0">
-					<form id="sign-form" class="form m-t-10" method="POST" action="http://localhost:12000/api/v1/auth/signup">
+					<form id="sign-form" class="form m-t-10" (ngSubmit)="register(user)" #registerForm="ngForm">
 
                           <div id="msg" style="color:red"></div><br>
 
