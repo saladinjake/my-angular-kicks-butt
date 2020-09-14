@@ -60,3 +60,5 @@ app.post('/chat', (req, res) => {
     }
   })
 })
+
+module.exports=router
