@@ -21,11 +21,18 @@ export class RegisterComponent implements OnInit {
     user_type:''
   };
 
-  constructor() {
+  constructor(private authService: AuthService, private _router: Router) {
 
   }
 
   ngOnInit(): void {
   }
+
+  register(theUser: User) {
+      this.authService.register(theUser);
+      this._router.navigate(['/']);
+  }
+
+
 
 }

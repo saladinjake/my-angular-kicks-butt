@@ -13,6 +13,15 @@ import { CoreModule } from './core/core.module';
 
 
 import { AppComponent } from './app.component';
+import { StorefrontComponent } from './storefront/storefront.component';
+import { CartComponent } from './storefront/cart/cart.component';
+import { CheckoutComponent } from './storefront/checkout/checkout.component';
+import { ProductlistComponent } from './storefront/productlist/productlist.component';
+import { RelatedComponent } from './storefront/related/related.component';
+import { RatingsComponent } from './storefront/ratings/ratings.component';
+import { ReviewsComponent } from './storefront/reviews/reviews.component';
+import { WalletComponent } from './storefront/wallet/wallet.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const IMPORTED_MODULES = [
@@ -28,7 +37,7 @@ const IMPORTED_MODULES = [
 
 
 @NgModule({
-  declarations: [AppComponent
+  declarations: [AppComponent, StorefrontComponent, CartComponent, CheckoutComponent, ProductlistComponent, RelatedComponent, RatingsComponent, ReviewsComponent, WalletComponent, ChatComponent
    ],
   imports: [...IMPORTED_MODULES],
   providers: [],

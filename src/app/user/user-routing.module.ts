@@ -19,7 +19,7 @@ export const dashboardRoutes: Routes = [
   {
     path: 'dashboard',
     component: UserComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: DashboardComponent},
