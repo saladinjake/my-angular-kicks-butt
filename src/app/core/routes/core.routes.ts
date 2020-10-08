@@ -18,6 +18,6 @@ export const APP_ROUTES : Routes = [
       { path: 'passwordreset', component: ForgetpasswordComponent},
       { path: 'passwordedit', component: ChangepasswordComponent},
       { path: 'locked', component: IdlestateComponent},
-      { path: '**', component: PageNotFoundComponent}
+    //  { path: '**', component: PageNotFoundComponent}
 
 ];

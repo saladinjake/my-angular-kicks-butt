@@ -35,4 +35,12 @@ export class AuthController {
   }
 
   static resetPassword(request,response){}
+
+  static getAllUsers(req, res){
+
+      User.find().then(rec => {
+        res.status(200).json(rec)
+      })
+  }
+
 }

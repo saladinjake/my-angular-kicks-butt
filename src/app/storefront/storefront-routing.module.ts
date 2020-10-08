@@ -26,7 +26,7 @@ export const APP_ROUTES: Routes = [
 
       { path: 'ratings', component: RatingsComponent },
       { path: 'reviews', component: ReviewsComponent },
-        { path: 'wallet', component: WalletComponent }
+      { path: 'wallet', component: WalletComponent }
     ]
   }
 ];

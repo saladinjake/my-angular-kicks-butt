@@ -1,5 +1,7 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 
 import { ChatComponent } from './chat.component';
 import { ChatboxComponent } from './chatbox/chatbox.component';
@@ -13,11 +15,11 @@ export const APP_ROUTES: Routes = [
   {
     path: 'chat',
     component: ChatComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'chat', pathMatch: 'full' },
+      { path: '', redirectTo: 'chatbov', pathMatch: 'full' },
       { path: 'chatexpanded', component:  ChatexpandedComponent },
-      { path: 'chat', component: ChatboxComponent },
+      { path: 'chatbox', component: ChatboxComponent },
 
     ]
   }
@@ -25,7 +27,7 @@ export const APP_ROUTES: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(APP_ROUTES)],
   exports: [RouterModule]
 })
 export class ChatRoutingModule { }

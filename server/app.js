@@ -24,14 +24,14 @@ mongoose.connect(
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../dist')))
-app.use(authRoutes)
-app.use(chatRoutes)
+app.use('api/v1/authenticate',authRoutes)
+app.use('api/v1/chats',chatRoutes)
 
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
 });
 
-server.listen(3000, () => console.log("Listening on port 3000..."));
+server.listen(3000, () => console.log("Listening on port 3000 or..."+ `${PORT} with ip address ${IP}`));
 
 module.exports= { app, io };
