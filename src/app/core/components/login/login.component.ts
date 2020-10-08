@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
   };
 
   //or This
-  // email: string | null = null;
-  // password: string | null = null;
+  email: string | null = null;
+  password: string | null = null;
 
 
   constructor(private authService: AuthService, private _router: Router) { }
@@ -39,22 +39,21 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login(theUser: User) {
-    //old
-    // this.authService.login(theUser);
-    // this._router.navigate(['/dashboard']);
 
-    //or login through
-    // this.authService.loginThrough(this.email!, this.password!).subscribe(() => {
-      // this.router.navigateByUrl('/');
-    // });
 
     this.authService.login(theUser).subscribe(data => {
-      console.log(data);
+        localStorage.setItem('user', JSON.stringify(data));
       this._router.navigate(['/dashboard']);
-      localStorage.setItem('user', JSON.stringify(data));
+
+
     });
 
-    //or This
-    // this._router.navigateByUrl('/');
+
+  }
+
+  loginThrough(): void {
+    this.authService.loginThrough(this.email!, this.password!).subscribe(() => {
+      this._router.navigateByUrl('/');
+    });
   }
 }
