@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { User } from '../../models/user.model';
-import { AuthService } from '../../../user/services/auth.service';
+import { AuthService } from '../../../sharedlibs/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,6 +21,8 @@ export class RegisterComponent implements OnInit {
     user_type:''
   };
 
+
+
   constructor(private authService: AuthService, private _router: Router) {
 
   }
@@ -31,6 +33,7 @@ export class RegisterComponent implements OnInit {
   register(theUser: User) {
       this.authService.register(theUser);
       this._router.navigate(['/']);
+    
   }
 
 

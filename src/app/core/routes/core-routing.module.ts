@@ -18,7 +18,7 @@ export const coreRoutes: Routes = [
       { path: 'passwordreset', component: ForgetpasswordComponent},
       { path: 'passwordedit', component: ChangepasswordComponent},
       { path: 'locked', component: IdlestateComponent},
-      { path: '**', component: PageNotFoundComponent}
+      // { path: '**', component: PageNotFoundComponent}
 
 ];
 
