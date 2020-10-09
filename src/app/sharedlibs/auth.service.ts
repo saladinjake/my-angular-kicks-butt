@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {Config, API_URL} from '../config/Config';
 
-
-
-import { Observable, BehaviorSubject, EMPTY } from 'rxjs';
+import { Observable, BehaviorSubject, Subject, EMPTY } from 'rxjs';
 import { tap, pluck } from 'rxjs/operators';
 import { User, AuthResponse } from './interface/index';
 
@@ -15,27 +13,26 @@ import { TokenStorage } from './token.store';
 @Injectable({
   providedIn: 'root'
 })
-
-
 export class AuthService {
-    private user$ = new BehaviorSubject<User | null>(null);
-
-
+  private user$ = new BehaviorSubject<User | null>(null); // new Subject<User | nul>(null) //you can use subject
 
   constructor(private _router: Router, private _http: HttpClient, _tokenStorage:TokenStorage) { }
+  //simple registration without observables
   register(user) {
     return this._http.post( `${API_URL}/signup`, user);
-    // localStorage.setItem('user', user);
   }
+  //simple login with out observables
   login(user) {
     return this._http.post( `${API_URL}/signin`, user);
   }
 
-
+  //regular logout without observables
   logout() {
     localStorage.clear();
     this._router.navigate(['/signin']);
   }
+
+   //to do: more implementation by cleaning out subscription
   isAuthenticated() {
     return localStorage.getItem('user');
   }
@@ -43,7 +40,7 @@ export class AuthService {
 
 
 
-  //login through observables
+  //complex login through observables
   loginThrough(email: string, password: string): Observable<User> {
     return this._http
       .post<AuthResponse>(`${API_URL}/signin`, { email, password })
@@ -87,7 +84,7 @@ export class AuthService {
 
 
   tokenStillValid(): Observable<User> {
-    const token: string | null = this.tokenStorage.getToken();
+    const token: string | null = this._tokenStorage.getToken();
 
     if (token === null) {
       return EMPTY;
@@ -107,14 +104,10 @@ export class AuthService {
 
  //register through observeables
   registerThrough(
-    firstname: string,
-    lastname: string,
-    othername: string,
-    user_type: string,
-    phoneNumber: string,
-    email: string,
-    password: string,
-    repeatPassword: string
+
+    firstname: string,lastname: string,othername: string,
+    user_type: string,phoneNumber: string,email: string,
+    password: string,username: string,repeatPassword: string
   ): Observable<User> {
     return this._http
       .post<AuthResponse>(`${API_URL}/api/auth/register`, {

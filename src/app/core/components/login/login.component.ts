@@ -21,13 +21,15 @@ export class LoginComponent implements OnInit {
   user: User = {
     email: '',
     password: '',
-
     firstname:'',
     lastname:'',
     phoneNumber:'',
     username:'',
-    user_type:''
+    user_type:'',
+    othernames:'',
+    passwordRepeat:''
   };
+
 
   //or This
   email: string | null = null;
@@ -38,10 +40,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  login(theUser: User) {
+  login() {
 
-
-    this.authService.login(theUser).subscribe(data => {
+    this.user.email = this.email;
+    this.user.password = this.password;
+    this.authService.login(this.user).subscribe(data => {
         localStorage.setItem('user', JSON.stringify(data));
       this._router.navigate(['/dashboard']);
 

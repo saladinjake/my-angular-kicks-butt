@@ -32,6 +32,6 @@
             </div>
 
             <ng-template #runNextMenu>
-                 <usermenu-component *ngIf="loggedIn"></usermenu-component>
-                  <adminmenu-component *ngIf="loggedIn && isAdmin"></adminmenu-component>
+                 <usermenu-component *ngIf="loggedIn || user"></usermenu-component>
+                  <adminmenu-component *ngIf="loggedIn && isAdmin || user?.isAdmin"></adminmenu-component>
             </ng-template>

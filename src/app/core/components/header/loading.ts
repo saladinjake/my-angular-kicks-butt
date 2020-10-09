@@ -1,4 +1,4 @@
-export class IReporterWebsiteLoadingEffect {
+export class LoadingEffect {
   constructor() {
     this.verticalLoader = document.getElementsByClassName('loader');
     this.gtd = document.getElementById('gtd');

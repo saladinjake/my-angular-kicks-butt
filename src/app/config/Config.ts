@@ -5,4 +5,17 @@ export const Config = {
   api:API_URL,
   allowCorsOrigin: true,
   allowHttps: true,
+  store: {},
+
+  setItem:(item, value) =>{
+    if(this.store[item]){
+      this.store[item] = value;
+    }
+    this.store[item] = value;
+
+  },
+
+  getItem:(key) =>{
+    return this.store[key]
+  }
 };

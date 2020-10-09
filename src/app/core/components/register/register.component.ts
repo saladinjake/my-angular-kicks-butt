@@ -13,6 +13,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 
+import  { SignUpCheker }  from '../../js/SignUpCheker';
 
 @Component({
   selector: 'app-register',
@@ -28,7 +29,8 @@ export class RegisterComponent implements OnInit {
     phoneNumber:'',
     username:'',
     user_type:'',
-    othername:''
+    othernames:'',
+    passwordRepeat:''
   };
 
 
@@ -57,8 +59,16 @@ export class RegisterComponent implements OnInit {
   });
 
 
-  get fullname(): AbstractControl {
-    return this.userForm.get('fullname')!;
+  get firstname(): AbstractControl {
+    return this.userForm.get('firstname')!;
+  }
+
+  get lastname(): AbstractControl {
+    return this.userForm.get('lastname')!;
+  }
+
+  get othernames(): AbstractControl {
+    return this.userForm.get('othernames')!;
   }
 
   get email(): AbstractControl {
@@ -73,21 +83,69 @@ export class RegisterComponent implements OnInit {
     return this.userForm.get('repeatPassword')!;
   }
 
-
-  register(theUser: User) {
-      this.authService.register(theUser);
-      this._router.navigate(['']);
+  get phoneNumber():AbstractControl {
+    return this.userForm.get('phoneNumber')!;
   }
 
 
+
+
+  get username():AbstractControl {
+    return this.userForm.get('username')!;
+  }
+
+
+  get userType():AbstractControl {
+    return this.userForm.get('user_type')!;
+  }
+  //method 1 to register with reative form and custom validation
+  register() {
+
+         const {
+           firstname,lastname,othername,
+           user_type, phoneNumber, email,
+           password,username, repeatPassword
+         } = this.userForm.getRawValue();
+
+     this.user.firstname = firstname;
+     this.user.lastname = lastname;
+     this.user.email = email;
+     this.user.username = username;
+     this.user.othernames = othernames;
+     this.user.password = password;
+     this.user.passwordRepeat = repeatPassword;
+     this.user.user_type = user_type;
+     this.user.phoneNumber = phoneNumber;
+
+
+
+     //do my own validation here before submitting
+     const resultingData = SignUpCheker.triggerValidation({...this.user});
+     if(resultingData){
+       this.authService.register(this.user).subscribe( (data) =>{
+          this._router.navigate(['']);
+       });
+     }
+
+  }
+
+ //mth 2
   registerThrough(): void {
       if (this.userForm.invalid) {
         return;
       }
 
-      const { firstname,lastname,othername, user_type, phoneNumber, email, password, repeatPassword } = this.userForm.getRawValue();
+      const {
+        firstname,lastname,othername,
+        user_type, phoneNumber, email,
+        password,username, repeatPassword
+      } = this.userForm.getRawValue();
 
-      this.authService.register(firstname,lastname,othername, user_type, phoneNumber, email, password, repeatPassword).subscribe(data => {
+      this.authService.registerThrough(
+        firstname,lastname,othername,
+        user_type,phoneNumber,email,
+        password,username,repeatPassword
+      ).subscribe(data => {
         this._router.navigate(['']);
       });
   }
