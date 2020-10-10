@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Router } from "@angular/router"
 import { AuthService } from '../../../sharedlibs/auth.service';
 // import { LoadingEffect } from './loading';
 
-
+import {User } from '../../../sharedlibs/interface/index'
 
 @Component({
   selector: 'app-header',

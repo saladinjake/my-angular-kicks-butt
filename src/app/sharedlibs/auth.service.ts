@@ -16,7 +16,7 @@ import { TokenStorage } from './token.store';
 export class AuthService {
   private user$ = new BehaviorSubject<User | null>(null); // new Subject<User | nul>(null) //you can use subject
 
-  constructor(private _router: Router, private _http: HttpClient, _tokenStorage:TokenStorage) { }
+  constructor(private _router: Router, private _http: HttpClient,private _tokenStorage:TokenStorage) { }
   //simple registration without observables
   register(user) {
     return this._http.post( `${API_URL}/signup`, user);
@@ -24,6 +24,14 @@ export class AuthService {
   //simple login with out observables
   login(user) {
     return this._http.post( `${API_URL}/signin`, user);
+  }
+
+  sendForgetPasswordInstruction(user){
+      return this._http.post( `${API_URL}/password-forgot`, user);
+  }
+
+  changePassword(user){
+      return this._http.post( `${API_URL}/password-reset`, user);
   }
 
   //regular logout without observables
@@ -42,16 +50,47 @@ export class AuthService {
 
   //complex login through observables
   loginThrough(email: string, password: string): Observable<User> {
+    let that  = this;
     return this._http
       .post<AuthResponse>(`${API_URL}/signin`, { email, password })
       .pipe(
         tap(({ token, user }) => {
-          this.setUser(user);
-          this._tokenStorage.saveToken(token);
+          that.setUser(user);
+          that._tokenStorage.saveToken(token);
         }),
         pluck('user')
       );
   }
+
+
+  //register through observeables
+   registerThroughObservable(
+
+     firstname: string,lastname: string,
+     //othername: string,
+     user_type: string,phoneNumber: string,email: string,
+     password: string,username: string, repeatPassword: string
+   ): Observable<User> {
+     return this._http
+       .post<AuthResponse>(`${API_URL}/api/auth/register`, {
+         firstname,
+         lastname,
+         //othernames,
+         user_type,
+         phoneNumber,
+         email,
+         password,
+         repeatPassword
+       })
+       .pipe(
+         tap(({ token, user }) => {
+           this.setUser(user);
+           this._tokenStorage.saveToken(token);
+         }),
+         pluck('user')
+       );
+   }
+
 
 
   setUser(user: User | null): void {
@@ -59,7 +98,7 @@ export class AuthService {
       user.isAdmin = user.roles.includes('admin');
     }
     this.user$.next(user);
-    window.user = user;
+    // window.user = user;
   }
 
 
@@ -72,7 +111,7 @@ export class AuthService {
   signOut(): void {
     this._tokenStorage.signOut();
     this.setUser(null);
-    delete window.user;
+    // delete window.user;
   }
 
 
@@ -94,6 +133,7 @@ export class AuthService {
       tap(({ user }) => this.setUser(user)),
       pluck('user')
     );
+
   }
 
 
@@ -102,31 +142,5 @@ export class AuthService {
   }
 
 
- //register through observeables
-  registerThrough(
-
-    firstname: string,lastname: string,othername: string,
-    user_type: string,phoneNumber: string,email: string,
-    password: string,username: string,repeatPassword: string
-  ): Observable<User> {
-    return this._http
-      .post<AuthResponse>(`${API_URL}/api/auth/register`, {
-        firstname,
-        lastname,
-        othername,
-        user_type,
-        phoneNumber,
-        email,
-        password,
-        repeatPassword
-      })
-      .pipe(
-        tap(({ token, user }) => {
-          this.setUser(user);
-          this._tokenStorage.saveToken(token);
-        }),
-        pluck('user')
-      );
-  }
 
 }

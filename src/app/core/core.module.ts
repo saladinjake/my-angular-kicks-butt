@@ -37,13 +37,14 @@ import { LoadingComponent } from './loading/loading.component';
 import { CoreComponent } from './core.component';
 import { CoreRoutingModule } from './routes/core-routing.module';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
     CoreRoutingModule,

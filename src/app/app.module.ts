@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+
 //import modules
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -14,6 +15,9 @@ import { ChatModule } from './chat/chat.module';
 import { StorefrontModule } from './storefront/storefront.module';
 
 //Admin module
+
+
+
 
 import { AppComponent } from './app.component';
 

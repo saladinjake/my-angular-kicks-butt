@@ -1,22 +1,21 @@
-'use strict';
 import $ from 'jquery';
-alertify.set('notifier','position', 'top-left');
-
-let terms_and_cond = 'not selected';
-document.addEventListener('DOMContentLoaded',(e)=>{
- const terms_and_condition_checker = document.getElementById("checkbox-signup");
-   if(document.getElementById('signup_page'))
-    terms_and_condition_checker.addEventListener("click",(e)=>{
-
-       if(terms_and_cond=="not selected"){
-         e.target.value="off"
-         terms_and_cond ='selected'
-       }else{
-        e.target.value="on"
-        terms_and_cond = 'not selected';
-       }
-    })
-})
+// alertify.set('notifier','position', 'top-left');
+//
+ let terms_and_cond = 'not selected';
+// document.addEventListener('DOMContentLoaded',(e)=>{
+//  const terms_and_condition_checker = document.getElementById("checkbox-signup");
+//    if(document.getElementById('signup_page'))
+//     terms_and_condition_checker.addEventListener("click",(e)=>{
+//
+//        if(terms_and_cond=="not selected"){
+//          e.target.value="off"
+//          terms_and_cond ='selected'
+//        }else{
+//         e.target.value="on"
+//         terms_and_cond = 'not selected';
+//        }
+//     })
+// })
 
 const validNameRegularExpression = /^[A-Za-z]{3,30}$/;
 const othernamesRegularExpression = /^[a-zA-Z]'?([a-zA-Z]|\.| |-){4,}$/;
@@ -32,7 +31,7 @@ export class HelpWithSignUp {
     if (password === confirmPassword) {
       return true;
     }
-    var notification = alertify.notify('Password do not match.', 'error', 5, function(){  console.log('dismissed'); });
+    // var notification = alertify.notify('Password do not match.', 'error', 5, function(){  console.log('dismissed'); });
 
     return false;
   }
@@ -54,49 +53,49 @@ export class HelpWithSignUp {
     if (!validNameRegularExpression.test(firstname)) {
       hasBeenValidated = false;
       console.log('fn err')
-      var notification = alertify.notify('Invalid firstname', 'error', 5, function(){  console.log('dismissed'); });
+      // var notification = alertify.notify('Invalid firstname', 'error', 5, function(){  console.log('dismissed'); });
 
     }
 
     if (!validateLastnameRegex.test(lastname)) {
       hasBeenValidated = false;
       console.log('ln err')
-      var notification = alertify.notify('Invalid lastname', 'error', 5, function(){  console.log('dismissed'); });
+      // var notification = alertify.notify('Invalid lastname', 'error', 5, function(){  console.log('dismissed'); });
 
     }
 
     if (!othernamesRegularExpression.test(user_type)) {
       hasBeenValidated = false;
       console.log('ot err')
-      var notification = alertify.notify('Invalid usertype', 'error', 5, function(){  console.log('dismissed'); });
+      // var notification = alertify.notify('Invalid usertype', 'error', 5, function(){  console.log('dismissed'); });
 
     }
 
     if (!usernameRegularExpression.test(username)) {
       hasBeenValidated = false;
       console.log('un err')
-      var notification = alertify.notify('Invalid username', 'error', 5, function(){  console.log('dismissed'); });
+      // var notification = alertify.notify('Invalid username', 'error', 5, function(){  console.log('dismissed'); });
 
     }
 
     if (!emailRegularExpression.test(email)) {
       hasBeenValidated = false;
       console.log('em err')
-      var notification = alertify.notify('Invalid email', 'error', 5, function(){  console.log('dismissed'); });
+      // var notification = alertify.notify('Invalid email', 'error', 5, function(){  console.log('dismissed'); });
 
     }
 
     if (!phoneNumberRegularExpression.test(phoneNumber)) {
       hasBeenValidated = false;
       console.log('ph err')
-      var notification = alertify.notify('Invalid phone number', 'error', 5, function(){  console.log('dismissed'); });
+      // var notification = alertify.notify('Invalid phone number', 'error', 5, function(){  console.log('dismissed'); });
 
     }
 
     if (!passwordRegularExpression.test(password)) {
       hasBeenValidated = false;
       console.log('pw err')
-      var notification = alertify.notify('Invalid password', 'error', 5, function(){  console.log('dismissed'); });
+      // var notification = alertify.notify('Invalid password', 'error', 5, function(){  console.log('dismissed'); });
 
     }
     return hasBeenValidated;
@@ -114,13 +113,13 @@ export class HelpWithSignUp {
     phoneNumber}) {
 
 
-    const email = email;
-    const phoneNumber = phoneNumber;
-    const password = password;
-    const confirmPassword = passwordRepeat;
-    const firstname = firstname;
-    const lastname = lastname;
-    const username = username;
+    // const email = email;
+    // const phoneNumber = phoneNumber;
+    // const password = password;
+    // const confirmPassword = passwordRepeat;
+    // const firstname = firstname;
+    // const lastname = lastname;
+    // const username = username;
 
     //const othernames = document.getElementById('othernames').value;
     var user_type= user_type;
@@ -133,7 +132,8 @@ export class HelpWithSignUp {
       email,
       phoneNumber,
       password,
-      terms_and_cond
+      terms_and_cond,
+      passwordRepeat
     };
 
     const isValid = HelpWithSignUp.validateSignup(info);
@@ -141,7 +141,7 @@ export class HelpWithSignUp {
       console.log('false from HelpWithSignUp.validateSignup(info)');
       return false;
     }
-    const result = HelpWithSignUp.validatePassword(info.password, confirmPassword);
+    const result = HelpWithSignUp.validatePassword(info.password, passwordRepeat);
     if (!result) {
       console.log('false from HelpWithSignUp.validatePassword(info.password, confirmPassword)');
       return false;
