@@ -14,6 +14,7 @@ import { IdlestateComponent } from './components/idlestate/idlestate.component';
 
 
 //presentational component
+import { LoadingComponent } from './components/loading/loading.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AdminheaderComponent } from './components/header/adminheader/adminheader.component';
 import { UserheaderComponent } from './components/header/userheader/userheader.component';
@@ -31,7 +32,7 @@ import { CarouselComponent } from './components/widgets/carousel/carousel.compon
 import { ModalComponent } from './components/widgets/modal/modal.component';
 import { ProductComponent } from './components/widgets/product/product.component';
 import { CardboxComponent } from './components/widgets/cardbox/cardbox.component';
-import { LoadingComponent } from './loading/loading.component';
+
 
 //main layout component
 import { CoreComponent } from './core.component';
@@ -52,6 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [
     //presentational components
+    LoadingComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,

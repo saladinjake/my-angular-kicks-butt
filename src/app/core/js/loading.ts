@@ -9,6 +9,7 @@ export class LoadingEffect {
     this.gtd.style.display = 'none';
     this.gtd.style.visibility = 'hidden';
     this.uiMockUp.style.display="none";
+    this.body = document.getElementByTagName('body')
   }
 
   attachEvents() {
@@ -37,12 +38,5 @@ export class LoadingEffect {
 
   }
 
-  createLoadingEffect() {
-    for (let i = 0; i < 4; i++) {
-      this.loaders = document.createElement('div');
-      this.loaders.classList.add('loading-bar');
-      this.loadingJacket.appendChild(this.loaders);
-      this.body[0].appendChild(this.loadingJacket);
-    }
-  }
+
 }

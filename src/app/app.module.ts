@@ -27,6 +27,7 @@ const IMPORTED_MODULES = [
   BrowserModule,
   AppRoutingModule,
   FormsModule,
+  ReactiveFormsModule,
   HttpClientModule,
 
   UserModule,

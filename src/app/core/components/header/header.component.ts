@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from "@angular/router"
 import { AuthService } from '../../../sharedlibs/auth.service';
-// import { LoadingEffect } from './loading';
 
 import {User } from '../../../sharedlibs/interface/index'
 
@@ -14,6 +13,7 @@ export class HeaderComponent implements OnInit {
   @Input() loggedIn : boolean = false;
   @Input() isAdmin : boolean  = false;
 
+
   @Input() user: User | null = null;
 
   constructor(private router: Router, private authService: AuthService) {}
@@ -23,9 +23,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/auth/login');
   }
 
+  ngOnInit(){}
 
-  ngOnInit(): void {
-    // new LoadingEffect().attachEvents();
-  }
+
 
 }

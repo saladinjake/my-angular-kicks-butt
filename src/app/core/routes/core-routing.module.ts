@@ -8,7 +8,7 @@ import { ChangepasswordComponent } from '../components/changepassword/changepass
 import { IdlestateComponent } from '../components/idlestate/idlestate.component';
 import { CoreComponent } from '../core.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
-import { LoadingComponent } from '../loading/loading.component';
+import { LoadingComponent } from '../components/loading/loading.component';
 
 export const coreRoutes: Routes = [
 

@@ -1,11 +1,12 @@
 import {FormControl, FormGroup} from '@angular/forms'
 
 export class PWChangeValidators {
+  static oldPw = 'i dont know';
    static OldPasswordMustBeCorrect(control: FormControl) {
-     var invalid = false;
-     if (control.value != PWChangeValidators.oldPW)
-       return { oldPasswordMustBeCorrect: true }
-     return null;
+     // var invalid = false;
+     // if (control.value != PWChangeValidators.oldPW)
+     //   return { oldPasswordMustBeCorrect: true }
+     // return null;
    }
 
    static newIsNotOld(group: FormGroup){
