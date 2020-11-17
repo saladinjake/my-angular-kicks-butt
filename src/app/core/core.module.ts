@@ -14,6 +14,8 @@ import { IdlestateComponent } from './components/idlestate/idlestate.component';
 
 
 //presentational component
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+
 import { LoadingComponent } from './components/loading/loading.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AdminheaderComponent } from './components/header/adminheader/adminheader.component';
@@ -40,7 +42,6 @@ import { CoreRoutingModule } from './routes/core-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   imports: [
@@ -72,6 +73,7 @@ import { HttpClientModule } from '@angular/common/http';
     CardboxComponent,
 
     //routable components
+  
     LoginComponent,
     RegisterComponent,
     ForgetpasswordComponent,
@@ -79,6 +81,8 @@ import { HttpClientModule } from '@angular/common/http';
     IdlestateComponent,
 
     CoreComponent,
+
+    LandingpageComponent,
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

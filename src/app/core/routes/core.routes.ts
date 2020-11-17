@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 
+import { LandingpageComponent } from '../components/landingpage/landingpage.component';
 import { LoginComponent } from '../components/login/login.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { ForgetpasswordComponent } from '../components/forgetpassword/forgetpassword.component';
@@ -12,7 +13,9 @@ import { LoadingComponent } from '../components/loading/loading.component';
 
 export const APP_ROUTES : Routes = [
 
-      { path: '', redirectTo: 'signin', pathMatch: 'full' },
+
+        { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+        { path: 'welcome',  component: LandingpageComponent },
       { path: 'signin', component: LoginComponent},
       { path: 'signup', component: RegisterComponent},
       { path: 'passwordreset', component: ForgetpasswordComponent},
