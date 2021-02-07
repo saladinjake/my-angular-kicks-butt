@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingpageComponent } from '../components/landingpage/landingpage.component';
+import { AboutComponent } from '../components/about/about.component';
 import { LoginComponent } from '../components/login/login.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { ForgetpasswordComponent } from '../components/forgetpassword/forgetpassword.component';
@@ -14,11 +15,12 @@ export const coreRoutes: Routes = [
 
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'welcome',  component: LandingpageComponent },
+      { path: 'about',  component: AboutComponent },
       { path: 'signin', component: LoginComponent},
       { path: 'signup', component: RegisterComponent},
       { path: 'passwordreset', component: ForgetpasswordComponent},
       { path: 'passwordedit', component: ChangepasswordComponent},
-      { path: 'locked', component: IdlestateComponent},
+      { path: 'end-user/aggrement', component: IdlestateComponent},
       // { path: '**', component: PageNotFoundComponent}
 
 ];
