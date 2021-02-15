@@ -635,3 +635,68 @@ html.test3 .header{
 
 
 /* menu toggle */
+
+
+ .section {
+	 /* padding: 60px 0; */
+   margin:15px;
+}
+ .section__title {
+	 font-size: 24px;
+	 color: #3b3b58;
+	 text-align: center;
+	 font-family: 'Montserrat', sans-serif;
+	 margin: 14px 0;
+}
+ .section__intro {
+	 display: block;
+	 text-align: center;
+	 margin: 0 5% 30px;
+}
+ @media only screen and (min-width: 43.75em) {
+	 .section__intro {
+		 margin-left: 15%;
+		 margin-right: 15%;
+	}
+}
+ .section--cta {
+	 color: #454545;
+	 background: #f1f1f1;
+}
+ .box {
+	 display: flex;
+	 flex: 1 0 100%;
+	 margin-bottom: 20px;
+	 background: #f9f9f9;
+}
+ .box__grid {
+	 display: flex;
+	 flex-wrap: wrap;
+	 justify-content: space-between;
+}
+ .box__title {
+	 font-family: 'Montserrat', sans-serif;
+}
+ .box__more {
+	 color: #000;
+}
+ .box__content {
+	 color: #000;
+	 text-align: center;
+	 padding: 20px;
+}
+ .box__content > i {
+	 color: #3b3b58;
+}
+ .box__content:hover .box__more {
+	 color: #333;
+}
+ .box__content:hover .box__more i {
+	 padding-left: 4px;
+	 transition: all 0.2s ease-in-out;
+}
+ @media only screen and (min-width: 43.75em) {
+	 .box {
+		 flex: 0 0 30%;
+	}
+}

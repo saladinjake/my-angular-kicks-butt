@@ -61,7 +61,7 @@ img {
 
 /* -----------------NAV TOGGLE------------------ */
 .nav-toggle {
-    height: 30px;
+    height: 60px;
     width: 2em;
     padding: 0;
     background: #a59678;
@@ -194,7 +194,7 @@ nav a{
 
 header {
     color: white;
-    min-height: 700px;
+    min-height: 400px;
     justify-content: center;
     align-items: flex-start;
 }
@@ -258,7 +258,10 @@ main h2 {
 }
 
 /* -----------------FOOTER------------------ */
-
+footer{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
 footer h1 {
     text-align: center;
     font-size: 3em;
@@ -412,4 +415,14 @@ footer p {
         margin-left: auto;
     }
 
+}
+
+
+.column{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.column:hover{
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

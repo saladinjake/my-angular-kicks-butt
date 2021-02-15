@@ -20,7 +20,7 @@
 
 
 
-<header id="top" class="header card" style="background-color: #2e323f;">
+<header id="top" class="header card" style="background-color:  #636EFD;">
         <div class="text-vertical-center">
             <div class="header_container">
                 <div class="logo">
@@ -29,7 +29,7 @@
                     <p style="text-align:center; color:#fff; font-size:20px"> A trade merchandise with all in
                       one ready to make profit toolset</p>
 
-                      <h5 style="text-align:center; color:#000; font-size:15px; margin-top:60px"><a  href="./signin" class="btn-plain btn-sm" style="color:#000; font-size:20px;">Get Started</a></h5>
+                      <h5 style="text-align:center; color:#fff;border-radius:30px; font-size:15px; margin-top:60px"><a  style="color:#000" href="./signin" class="btn-plain btn-sm" style="color:#fff; font-size:20px;background:#000">Get Started</a></h5>
 
                       <h5 style="text-align:center; color:#fff; font-size:15px; margin-top:60px">
                         <span style="margin-right:5px"> * FOREX *</span>
@@ -43,7 +43,7 @@
             </div>
         </div>
           <hr style="background:#f6f6f6;height:20px; box-shadow: 10px 10px 8px #fafafa;"/>
-          
+
     </header>
 
 
@@ -72,7 +72,7 @@
                                 <!-- <div class="read-more text-center">
                                     <a  href="#" class="blue-btn-custom btn-sm">Read more</a>
                                 </div> -->
-                                <div class="readMore text-center"><a  href="#" class="btn-plain btn-sm">Read more</a></div>
+                                <div class="readMore text-center"><a style="background:#000"  href="./about" class="btn-plain btn-sm">Read more</a></div>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                                 <!-- <div class="readMore text-center">
                                     <a  href="#" class="blue-btn-custom btn-sm">Read more</a>
                                 </div> -->
-                                <div class="readMore text-center"><a  href="#" class="btn-plain btn-sm">Read more</a></div>
+                                <div class="readMore text-center"><a  style="background:#000" href="./tradeproduct" class="btn-plain btn-sm">Read more</a></div>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                                 <!-- <div class="read-more text-center">
                                     <a  href="#" class="blue-btn-custom btn-sm">Read more</a>
                                 </div> -->
-                                <div class="readMore text-center"><a  href="#" class="btn-plain btn-sm">Read more</a></div>
+                                <div class="readMore text-center" ><a  style="background:#000" href="./tradenetwork" class="btn-plain btn-sm">Read more</a></div>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@ Vivamus sodales id erat vitae ultricies. </p>
                     Great Trading Conditions Applied
                 </h2>
                 <div class="row">
-                  <div class="col-md-4 col-sm-6">
+                  <div class="col-md-4 col-sm-6 mixer">
                     <div class="center">
                       <span class="icon"><img src="./assets/images/network.png"></span>
                         <h4>18 Trading Tools</h4>
@@ -191,7 +191,7 @@ Vivamus sodales id erat vitae ultricies. </p>
                     </div>
 
                   </div>
-                  <div class="col-md-4 col-sm-6">
+                  <div class="col-md-4 col-sm-6 mixer">
                     <div class="center">
                         <span class="icon"><img src="./assets/images/network.png"></span>
                         <h4>1000+ Trading Products</h4>
@@ -200,7 +200,7 @@ Vivamus sodales id erat vitae ultricies. </p>
 
                     </div>
                   </div>
-                  <div class="col-md-4 col-sm-6">
+                  <div class="col-md-4 col-sm-6 mixer">
                     <div class="center">
                         <span class="icon"><img src="./assets/images/apply.png"></span>
                         <h4>Account Sets</h4>
@@ -261,6 +261,132 @@ Powerful platforms to suit all trading styles and needs on any device
 
 
 
+        <style>
+
+
+
+
+          .headerxx {
+            position:relative;
+            text-align:center;
+            background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+            color:white;
+          }
+
+
+          .inner-header {
+            height:65vh;
+            width:100%;
+            margin: 0;
+            padding: 0;
+          }
+
+          .flex { /*Flexbox for containers*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+          }
+
+          .waves {
+            position:relative;
+            width: 100%;
+            height:15vh;
+            margin-bottom:-7px; /*Fix for safari gap*/
+            min-height:100px;
+            max-height:150px;
+          }
+
+          .content {
+            position:relative;
+            height:20vh;
+            text-align:center;
+            background-color: white;
+          }
+
+          /* Animation */
+
+          .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+          }
+          .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+          }
+          .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+          }
+          .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+          }
+          .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+          }
+          @keyframes move-forever {
+            0% {
+             transform: translate3d(-90px,0,0);
+            }
+            100% {
+              transform: translate3d(85px,0,0);
+            }
+          }
+          /*Shrinking for mobile*/
+          @media (max-width: 768px) {
+            .waves {
+              height:40px;
+              min-height:40px;
+            }
+            .content {
+              height:30vh;
+            }
+            h1 {
+              font-size:24px;
+            }
+          }
+        </style>
+
+
+
+
+        <div class="headerxx">
+
+        <!--Content before waves-->
+        <div class="inner-header flex">
+
+        <h1 style="color:#fff">Tradefx offers various accounts types, trading software and tools to facilitate individuals and institutional customers to trade Forex and Derivatives online. All Retail, Affiliates and White Label clients have the opportunity to access various spreads and liquidity via state of the art automated trading platforms. Tradefx.com provides an unparalleled variety of account options that clients can select to enjoy a tailored trading experience that perfectly suits their needs. Coupled with superior trading conditions and lightning fast execution, Tradefx provides all the tools and services needed for clients of any level to realise their trading ambitions.</h1>
+        </div>
+
+        <!--Waves Container-->
+        <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+        </svg>
+        </div>
+        <!--Waves end-->
+
+        </div>
+        <!--Header ends-->
+
+        <!--Content starts-->
+        <div class="content flex">
+        <p>Our Services</p>
+        </div>
+        <!--Content ends-->
+
+
+
 
 
 
@@ -271,91 +397,7 @@ Powerful platforms to suit all trading styles and needs on any device
 
 
 <section id="apply"class="apply fixed-bg-apply" >
-  <div class="fixed-bg-divapply">
-    <div class="my_wrapper">
-       <div class="container-fluid">
-          <div class="row">
-              <div class="">
-                <h2 class="text-center">
-                    Great Trading Conditions Applied
-                </h2>
 
-
-                <div class="col-sm-4 col-md-3 cardbox">
-           <div class="card">
-              <div class="image-wrapper">
-                 <img src="./assets/images/target.png" />
-               </div>
-               <div class="card-body">
-                   <div class="card-content">
-                      <h2 class="main">Mission Statement</h2>
-                      <p>We are motivated to empower youth all across Africa
-                         by equipping them with tools to help them succeed in life
-                      </p>
-
-                   </div>
-                   <div class="read-more text-center">
-                       <a  href="#" class="btn btn-primary btn-sm">Read more</a>
-                   </div>
-               </div>
-           </div>
-       </div>
-
-       <div class="col-sm-4 col-md-3 cardbox">
-  <div class="card">
-     <div class="image-wrapper">
-        <img src="./assets/images/target.png" />
-      </div>
-      <div class="card-body">
-          <div class="card-content">
-             <h2 class="main">Mission Statement</h2>
-             <p>We are motivated to empower youth all across Africa
-                by equipping them with tools to help them succeed in life
-             </p>
-
-          </div>
-          <div class="read-more text-center">
-              <a  href="#" class="btn btn-primary btn-sm">Read more</a>
-          </div>
-      </div>
-  </div>
-</div>
-
-
-
-                              <div class="col-sm-4 col-md-3 cardbox">
-                         <div class="card">
-                            <div class="image-wrapper">
-                               <img src="./assets/images/target.png" />
-                             </div>
-                             <div class="card-body">
-                                 <div class="card-content">
-                                    <h2 class="main">Mission Statement</h2>
-                                    <p>We are motivated to empower youth all across Africa
-                                       by equipping them with tools to help them succeed in life
-                                    </p>
-
-                                 </div>
-                                 <div class="read-more text-center">
-                                     <a  href="#" class="btn btn-primary btn-sm">Read more</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-
-
-
-
-
-
-
-                </div>
-
-
-            </div>
-        </div>
-      </div>
-    </div>
 
 
 
@@ -371,27 +413,27 @@ Powerful platforms to suit all trading styles and needs on any device
             <div class="contact group">
                 <div class="col-md-4">
                     <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
-                       <a href="#set-5" class="hi-icon hi-icon-location" style="font-size:40px; color:green">1</a>
+                       <a href="#set-5" class="hi-icon hi-icon-location" style="font-size:40px; ">1</a>
                     </div>
-                    <div class="footer-col-text" style="background:#2e323f;padding:10px; color:#fff;height:100px">
+                    <div class="footer-col-text" style="background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);padding:10px; color:#fff;height:100px">
                     <p>Sign up
 <br>Create an account for free</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                   <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
-                     <a href="#" class="hi-icon hi-icon-mobile" style="font-size:40px; color:green">2</a>
+                     <a href="#" class="hi-icon hi-icon-mobile" style="font-size:40px; ">2</a>
                   </div>
-                  <div class="footer-col-text" style="background:#fff;padding:10px;height:100px">
+                  <div class="footer-col-text" style="background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);padding:10px;height:100px;color:#fff">
                     <p>Explore the platform<br>See what it’s like to invest without putting your money at risk</p>
                   </div>
 
                 </div>
                 <div class="col-md-4">
                     <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
-                       <a href="#set-5" class="hi-icon hi-icon-mail" style="font-size:40px; color:green">3</a>
+                       <a href="#set-5" class="hi-icon hi-icon-mail" style="font-size:40px;">3</a>
                     </div>
-                    <div class="footer-col-text-bar-last" style="background:#000;padding:10px; color:#fff;height:100px">
+                    <div class="footer-col-text-bar-last" style="background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);padding:10px; color:#fff;height:100px">
                      <p>Invest & earn profit: Select an asset and make your money work for you</p>
                     </div>
                 </div>
@@ -431,7 +473,7 @@ Powerful platforms to suit all trading styles and needs on any device
 
 
 <!-- Site footer -->
-  <footer class="site-footer" style="background:#2e323f;opacity:1">
+  <footer class="site-footer" style="background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);opacity:1">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6">

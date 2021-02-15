@@ -6,11 +6,16 @@ import { RouterModule } from '@angular/router';
 
 //core routable  component
 import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about/about.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 import { IdlestateComponent } from './components/idlestate/idlestate.component';
+import { EndusercontrollerComponent } from './components/endusercontroller/endusercontroller.component';
+import { TermscontrollerComponent } from './components/termscontroller/termscontroller.component';
+import { TradeproductcontrollerComponent } from './components/tradeproductcontroller/tradeproductcontroller.component';
+
 
 
 //presentational component
@@ -73,16 +78,19 @@ import { HttpClientModule } from '@angular/common/http';
     CardboxComponent,
 
     //routable components
-  
+
     LoginComponent,
     RegisterComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
     IdlestateComponent,
+    AboutComponent,
 
     CoreComponent,
-
     LandingpageComponent,
+    EndusercontrollerComponent,
+    TermscontrollerComponent,
+    TradeproductcontrollerComponent,
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
