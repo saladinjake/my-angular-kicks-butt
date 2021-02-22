@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
-import { AuthService } from '../../../sharedlibs/auth.service';
+// import { AuthService } from '../../../sharedlibs/auth.service';
 import { Router } from '@angular/router';
 
 import {
@@ -14,6 +14,12 @@ import {
 
 } from '@angular/forms';
 
+
+import { AuthService } from '../../../shared/auth.service';
+import { TokenService } from '../../../shared/token.service';
+import { AuthStateService } from '../../../shared/auth-state.service';
+
+
 import  { HelpWithSignUp }  from '../../js/SignupChecker';
 
 @Component({
@@ -23,6 +29,9 @@ import  { HelpWithSignUp }  from '../../js/SignupChecker';
   // providers:[FormBuilder]
 })
 export class RegisterComponent implements OnInit {
+  registerForm: FormGroup;
+  errors = null;
+
   user: User = {
     email: '',
     password: '',
@@ -52,9 +61,9 @@ export class RegisterComponent implements OnInit {
        user_type: ['', Validators.required],
        password: ['', Validators.required],
        phoneNumber: ['', Validators.required],
-       repeatPassword: ['', Validators.required,
-       that.passwordsMatchValidator
-     ]
+       // repeatPassword: ['', Validators.required,
+       // that.passwordsMatchValidator
+     // ]
     //
 
 
@@ -69,12 +78,13 @@ export class RegisterComponent implements OnInit {
 
 
   passwordsMatchValidator(control: FormControl): ValidationErrors | null {
-    const password = this.addForm.controls['password'];
-    return password && this.addForm.controls['repeatPassword'].value !== this.addForm.controls['password'].value
-      ? {
-          passwordMatch: true,
-        }
-      : null;
+    // const password = this.addForm.controls['password'];
+    // return password && this.addForm.controls['repeatPassword'].value !== this.addForm.controls['password'].value
+    //   ? {
+    //       passwordMatch: true,
+    //     }
+    //   : null;
+    return null;
   }
 
 
@@ -100,7 +110,7 @@ export class RegisterComponent implements OnInit {
      this.user.username = username;
      //this.user.othernames = othernames;
      this.user.password = password;
-     this.user.passwordRepeat = repeatPassword;
+     // this.user.passwordRepeat = repeatPassword;
      this.user.user_type = user_type;
      this.user.phoneNumber = phoneNumber;
 
@@ -109,15 +119,28 @@ export class RegisterComponent implements OnInit {
      //do my own validation here before submitting
       const resultingData = HelpWithSignUp.triggerValidation({...this.user});
       if(resultingData){
-       this.authService.register(this.user).subscribe( (data) =>{
-          this._router.navigate(['']);
-       });
+       // this.authService.register(this.user).subscribe( (data) =>{
+       //    this._router.navigate(['']);
+       // });
+
+       this.authService.register(this.user).subscribe(
+          result => {
+            console.log(result)
+          },
+          error => {
+            this.errors = error.error;
+          },
+          () => {
+            // this.registerForm.reset()
+            this._router.navigate(['login']);
+          }
+        )
       }
 
   }
 
  //mth 2
-  registerThroughObservable(): void {
+  registerThroughObservable(user): void {
       if (this.addForm.invalid) {
         console.log("empty form")
         // return;
@@ -133,26 +156,37 @@ export class RegisterComponent implements OnInit {
     const email = this.addForm.controls['email'].value;
     const password = this.addForm.controls['password'].value;
     const username= this.addForm.controls['username'].value;
-    const repeatPassword =this.addForm.controls['repeatPassword'].value
+    // const repeatPassword =this.addForm.controls['repeatPassword'].value;
 
 
 
 
-    this.authService.registerThroughObservable(
-        firstname,lastname,
-        //othername: string,
-        user_type,phoneNumber,email,
-        password,username, repeatPassword
+     this.user.firstname = firstname;
+     this.user.lastname = lastname;
+     this.user.email = email;
+     this.user.username = username;
+     //this.user.othernames = othernames;
+     this.user.password = password;
+     // this.user.passwordRepeat = repeatPassword;
+     this.user.user_type = user_type;
+     this.user.phoneNumber = phoneNumber;
+
+
+
+
+    this.authService.register(
+
+        this.user
 
       ).subscribe(data => {
-        this._router.navigate(['']);
+        this._router.navigate(['/profile']);
       });
   }
 
 
   registerAction(method){
     const mth = method;
-    mth == "basic" ? this.register() : this.registerThroughObservable()
+     this.registerThroughObservable(this.user)
   }
 
 

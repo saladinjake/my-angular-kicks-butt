@@ -5,9 +5,16 @@ import { RouterModule } from '@angular/router';
 
 
 //core routable  component
+// import { SigninComponent } from './components/signin/signin.component';
+// import { SignupComponent } from './components/signup/signup.component';
+// import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
+
 import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component'
+
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
@@ -81,6 +88,7 @@ import { HttpClientModule } from '@angular/common/http';
 
     LoginComponent,
     RegisterComponent,
+    UserProfileComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
     IdlestateComponent,
@@ -91,6 +99,12 @@ import { HttpClientModule } from '@angular/common/http';
     EndusercontrollerComponent,
     TermscontrollerComponent,
     TradeproductcontrollerComponent,
+  ],
+
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -15,6 +15,7 @@ import { EndusercontrollerComponent } from '../components/endusercontroller/endu
 import { TermscontrollerComponent } from '../components/termscontroller/termscontroller.component';
 import { TradeproductcontrollerComponent } from '../components/tradeproductcontroller/tradeproductcontroller.component';
 
+import { UserProfileComponent } from '../components/user-profile/user-profile.component'
 
 export const coreRoutes: Routes = [
 
@@ -30,6 +31,7 @@ export const coreRoutes: Routes = [
       { path: 'policy', component: EndusercontrollerComponent},
       { path: 'implied/terms', component: TermscontrollerComponent},
       // { path: '**', component: PageNotFoundComponent}
+       { path: 'profile', component: UserProfileComponent },
 
 ];
 

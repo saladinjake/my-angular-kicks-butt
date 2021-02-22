@@ -8,7 +8,7 @@ import { AccountComponent } from './account/account.component';
 import { GalleriesComponent } from './galleries/galleries.component';
 import { VideosComponent } from './videos/videos.component';
 import { TransactionsComponent } from './transactions/transactions.component';
-// import { CartComponent } from './cart/cart.component';
+import { CartComponent } from './cart/cart.component';
 import { EditComponent } from './account/edit/edit.component';
 import { UserComponent } from './user.component';
 
@@ -25,10 +25,12 @@ export const dashboardRoutes: Routes = [
       { path: 'home', component: DashboardComponent},
       { path: 'profile', component: ProfileComponent},
       { path: 'account', component: AccountComponent},
-      { path: 'galleries', component: GalleriesComponent},
-      { path: 'videos', component: VideosComponent},
-      { path: 'transaction', component: TransactionsComponent},
+      { path: 'basic/histories', component: GalleriesComponent},
+      { path: 'basic/package/histories', component: CartComponent},
+      { path: 'advanced/transaction/histories', component: TransactionsComponent},
       { path: 'account/edit/:id', component: EditComponent},
+      { path: 'learn/trading/videos', component: VideosComponent},
+
     ]
   }
 ];

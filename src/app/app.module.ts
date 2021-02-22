@@ -4,7 +4,7 @@ import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 //import modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -20,6 +20,7 @@ import { StorefrontModule } from './storefront/storefront.module';
 
 
 import { AppComponent } from './app.component';
+import { AuthInterceptor } from './shared/auth.interceptor';
 
 
 
@@ -42,7 +43,13 @@ const IMPORTED_MODULES = [
   declarations: [AppComponent,
    ],
   imports: [...IMPORTED_MODULES],
-  providers: [],
+  providers: [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }
+],
 
   bootstrap: [AppComponent]
 })

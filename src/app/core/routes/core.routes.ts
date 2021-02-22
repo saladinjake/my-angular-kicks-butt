@@ -16,6 +16,13 @@ import { EndusercontrollerComponent } from '../components/endusercontroller/endu
 import { TermscontrollerComponent } from '../components/termscontroller/termscontroller.component';
 import { TradeproductcontrollerComponent } from '../components/tradeproductcontroller/tradeproductcontroller.component';
 
+import { UserProfileComponent } from '../components/user-profile/user-profile.component'
+
+// import { SigninComponent } from '../components/signin/signin.component';
+// import { SignupComponent } from '../components/signup/signup.component';
+// import { UserProfileComponent } from '../components/user-profile/user-profile.component';
+
+
 export const APP_ROUTES : Routes = [
 
 
@@ -24,6 +31,8 @@ export const APP_ROUTES : Routes = [
         { path: 'about',  component: AboutComponent },
       { path: 'signin', component: LoginComponent},
       { path: 'signup', component: RegisterComponent},
+       { path: 'profile', component: UserProfileComponent },
+       // { path: 'register', component: SignupComponent },
       { path: 'passwordreset', component: ForgetpasswordComponent},
       { path: 'passwordedit', component: ChangepasswordComponent},
       { path: 'end-user/aggrement', component: IdlestateComponent},

@@ -19,8 +19,8 @@ export const APP_ROUTES: Routes = [
     component: StorefrontComponent,
     // canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'products', pathMatch: 'full' },
-      { path: 'products', component:  ProductlistComponent},
+      { path: '', redirectTo: 'products/forextrade', pathMatch: 'full' },
+      { path: 'products/forextrade', component:  ProductlistComponent},
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
 
