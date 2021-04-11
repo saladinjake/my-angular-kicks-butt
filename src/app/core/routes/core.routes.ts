@@ -15,7 +15,6 @@ import { LoadingComponent } from '../components/loading/loading.component';
 import { EndusercontrollerComponent } from '../components/endusercontroller/endusercontroller.component';
 import { TermscontrollerComponent } from '../components/termscontroller/termscontroller.component';
 import { TradeproductcontrollerComponent } from '../components/tradeproductcontroller/tradeproductcontroller.component';
-
 import { UserProfileComponent } from '../components/user-profile/user-profile.component'
 
 // import { SigninComponent } from '../components/signin/signin.component';

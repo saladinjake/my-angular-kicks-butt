@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './user/user.module'
 import { CoreModule } from './core/core.module';
 import { ChatModule } from './chat/chat.module';
+import { AdminModule } from './admin/admin.module';
 import { StorefrontModule } from './storefront/storefront.module';
 
 //Admin module
@@ -31,10 +32,11 @@ const IMPORTED_MODULES = [
   ReactiveFormsModule,
   HttpClientModule,
 
-  UserModule,
+  UserModule, //every
   CoreModule,
   ChatModule,
-  StorefrontModule
+  StorefrontModule,
+  AdminModule ,
 
 ];
 
@@ -51,6 +53,7 @@ const IMPORTED_MODULES = [
   }
 ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
