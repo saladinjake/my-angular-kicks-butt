@@ -25,11 +25,12 @@ export const dashboardRoutes: Routes = [
       { path: 'home', component: DashboardComponent},
       { path: 'profile', component: ProfileComponent},
       { path: 'account', component: AccountComponent},
-      { path: 'galleries', component: GalleriesComponent},
-      { path: 'videos', component: VideosComponent},
-      { path: 'transaction', component: TransactionsComponent},
-      { path: 'cart', component: CartComponent},
+      { path: 'basic/histories', component: GalleriesComponent},
+      { path: 'basic/package/histories', component: CartComponent},
+      { path: 'advanced/transaction/histories', component: TransactionsComponent},
       { path: 'account/edit/:id', component: EditComponent},
+      { path: 'learn/trading/videos', component: VideosComponent},
+
     ]
   }
 ];

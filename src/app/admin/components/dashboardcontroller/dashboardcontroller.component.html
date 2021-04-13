@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+	<meta name="keywords" content="php cmf, php framework, php content management framework, php cms" />
+	<meta name="description" content="Directy CMF" />
+    <meta name="generator" content="ApPHP Directy CMF v1.1.2">
+	<!-- don't move it -->
+   <!--  <base href="/" /> -->
+    <title>Dashboard </title>
+	<link rel="shortcut icon" href="" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../assets/templates/backend/css/style.css" /> -->
+
+    <!-- jquery files -->
+		    <script type="text/javascript" src="../../assets/js/vendors/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../../assets/js/vendors/jquery/jquery-ui.min.js"></script>
+
+    <!-- tooltip files -->
+    <script type="text/javascript" src="../../assets/js/vendors/tooltip/jquery.tipTip.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="../../assets/js/vendors/tooltip/tipTip.css" /> -->
+
+    <!-- site js main files -->
+	    <script type="text/javascript" src="../../assets/templates/backend/js/main.js"></script>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="head">
+        <div class="left">
+            <a class="header-title" href="./admin-dashboard.html">ADMINISTRATOR PANEL</a>
+
+
+            </div>
+        <div class="right">
+
+            <div class="logout" >
+            <a class="tooltip-link" title="Logout" href="./login.html">
+              <img src="templates/backend/images/icons/logout-white.png" alt="logout" />
+            </a>
+          </div>
+          <div id="dd" class="wrapper-dropdown" >
+          <img height="36px" src="templates/backend/images/accounts/no_image.png" alt="avatar" />
+          <span>Hi, saladin</span>
+          <ul class="dropdown" >
+          <li class="active">
+            <a href="admin-dashboard.html"><i class="icon-dashboard"></i>Dashboard</a></li>
+            <li><a href="./admin-sitesettings.html"><i class="icon-settings"></i>Settings</a></li>
+            <li><a href="./admin-accounts.html"><i class="icon-account"></i>My Account</a></li>
+              </ul>
+          </div>
+
+            <form style="margin-top:10px " class="form-search" method="get" action="#">
+                        <input type="search" name="search" placeholder="search your book here for..">
+                        <button type="submit">Search</button>
+
+                    </form>
+                    <div>
+    </div>
+
+
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+        <div id="top-line">
+            <a href="javascript:void(0)" id="menuopen">Open <label>&#9660;</label></a>
+            <a href="javascript:void(0)" id="menuclose">Close <label>&#9650;</label></a>
+            <a href="javascript:void(0)" id="menucollapse" data-direction="ltr">&#9664;</a>
+        </div>
+        <ul class="menu">
+                      <li id="menu-00">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><img src="templates/backend/images/icons/dashboard.png" alt="icon" class="menu-icon" />General <b class="caret"></b></a>
+                      <ul>
+                      <li class="active" id="menu-10"><a href="backend/">Dashboard</a></li>
+                      <li id="menu-11"><a href="./admin-sitesettings.html">Site Settings</a></li>
+                      <li id="menu-12"><a href="../guestPages/index.html">Preview Home</a></li>
+                      <li id="menu-18"><a href="./currency-settings.html">Currencies</a></li>
+
+                      </ul>
+                      </li>
+
+
+                      <li id="menu-02">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+                        <img src="templates/backend/images/icons/languages.png" alt="icon" class="menu-icon" />User Management <b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-30"><a href="./user-accounts.html">Users </a></li>
+                      <li id="menu-15"><a href="./plan.html">Packages</a></li>
+                      <li id="menu-15"><a href="./useritinerary-history.html">Transactions</a></li>
+                      </ul>
+                      </li>
+
+                      <li id="menu-02">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+                        <img src="templates/backend/images/icons/languages.png" alt="icon" class="menu-icon" />Payroll Management <b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-30"><a href="./user-accounts.html">Staff list </a></li>
+                      <li id="menu-31"><a href="./see-usermap.html">Staff payment records</a></li>
+                      <li id="menu-31"><a href="./driver-accounts.html">Staff Activity</a></li>
+                      <li id="menu-31"><a href="./see-drivermap.html">Staff Schedule/ Task</a></li>
+                      </ul>
+                      </li>
+
+
+
+                      <li id="menu-02">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><img src="templates/backend/images/icons/languages.png" alt="icon" class="menu-icon" />Billing Management<b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-30"><a href="./cars.html">Billings</a></li>
+                      <li id="menu-30"><a href="./cars.html">Orders </a></li>
+
+
+                      </ul>
+                      </li>
+
+                      <li id="menu-02">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><img src="templates/backend/images/icons/languages.png" alt="icon" class="menu-icon" />Training Module <b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-30"><a href="./user-accounts.html">Courses </a></li>
+                      <li id="menu-31"><a href="./see-usermap.html">Videos</a></li>
+                      <li id="menu-31"><a href="./see-usermap.html">Galleries</a></li>
+
+                      </ul>
+
+
+                      <li id="menu-02">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><img src="templates/backend/images/icons/languages.png" alt="icon" class="menu-icon" />Complaints <b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-30"><a href="./user-accounts.html">Technical Complaints </a></li>
+                      <li id="menu-30"><a href="./user-accounts.html">General Complaints </a></li>
+
+                      </ul>
+
+
+                      <li id="menu-01">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><img src="templates/backend/images/icons/accounts.png" alt="icon" class="menu-icon" />Admin Management <b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-20"><a href="./admin-accounts.html">Admins</a></li>
+                      <li id="menu-21"><a href="./roles-previledges.html">Roles & Privileges</a></li>
+                      <li id="menu-22"><a href="./edit-admin-account.html">My Account</a></li>
+                      </ul>
+                      </li>
+                      <li id="menu-03">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><img src="templates/backend/images/icons/modules.png" alt="icon" class="menu-icon" />Setup <b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-40"><a href="#">Modules Management</a></li>
+                      <li><a href="#"><img src="images/modules/setup/icon.png" class="sub-menu-icon" />Paystack</a></li>
+                      <li><a href="#"><img src="images/modules/setup/icon.png" class="sub-menu-icon" />Flutter Wave</a></li>
+                      <li><a href="#"><img src="images/modules/setup/icon.png" class="sub-menu-icon" />Google Api</a></li>
+                      <li><a href="#"><img src="images/modules/setup/icon.png" class="sub-menu-icon" />Google O-Auth</a></li>
+                      <li><a href="#"><img src="images/modules/setup/icon.png" class="sub-menu-icon" />Facebook Api</a></li>
+                      </ul>
+                      </li>
+
+                      <li id="menu-02">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><img src="templates/backend/images/icons/languages.png" alt="icon" class="menu-icon" />Report <b class="caret"></b></a>
+                      <ul>
+                      <li id="menu-30"><a href="./user-accounts.html">Drivers Reports </a></li>
+                      <li id="menu-31"><a href="./see-usermap.html">Users Reports</a></li>
+                      <li id="menu-31"><a href="./driver-accounts.html">SOS Reports</a></li>
+                      <li id="menu-31"><a href="./see-drivermap.html">Itineries Reports</a></li>
+
+                      <li id="menu-31"><a href="./see-drivermap.html">Payments Reports</a></li>
+
+                      <li id="menu-31"><a href="./see-drivermap.html">Complaints Reports</a></li>
+                      </ul>
+                      </li>
+
+                      </ul>
+
+
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content">
+        <div class="breadcrumbs">
+<a href="admin-dashboard.html">General</a> &nbsp;/&nbsp; <span>Dashboard</span>
+</div>
+
+<h1>Dashboard</h1>
+
+<div class="bloc" id="blocAlerts">
+    <div class="title collapsible closable">Alerts (action required)</div>
+    <div class="content">
+        <div class="alert alert-warning" id="alerts_msg_0"><button class="close" type="button">&times;</button>Cookie default path is defined as "<b>/</b>" in configuration file: <b>config/main.php</b>. <br>For security reasons we recommend you to replace it with following value: "<b>/directy-cmf-master/</b>".</div>
+        <div class="cb"></div>
+    </div>
+</div>
+
+<div class="bloc" id="blocHotKeys">
+    <div class="title collapsible">Dashboard (hotkeys)</div>
+    <div class="content sortable-content">
+
+
+
+
+
+
+
+
+      <a href="./admin-sitesettings.html" id="icon-backend" class="shortcut tooltip-link" title="General Settings">Settings<img src="templates/backend/images/shortcuts/settings.png" alt="settings" /></a>
+              <a href="./backend-menusettings.html" id="icon-backend-menus" class="shortcut tooltip-link" title="Backend Menu">Manage Pages <img src="templates/backend/images/shortcuts/backend-menus.png" alt="backend menu" /></a>
+                <a href="./admin-frontend-anchor-settings.html" id="icon-frontend-menus" class="shortcut tooltip-link" title="Frontend Menu">Manage Staff<img src="templates/backend/images/shortcuts/frontend-menus.png" alt="frontend menu" /></a>
+                <a href="./location-settings.html" id="icon-locations" class="shortcut tooltip-link" title="Locations">Locations<img src="templates/backend/images/shortcuts/locations.png" alt="locations" /></a>
+                <a href="./currency-settings.html" id="icon-currencies" class="shortcut tooltip-link" title="Currencies">Currencies<img src="templates/backend/images/shortcuts/currencies.png" alt="currencies" /></a>
+  <a href="./admin-accounts.html" id="icon-admins" class="shortcut tooltip-link" title="Admins">Admins<img src="templates/backend/images/shortcuts/admins.png" alt="admins" /></a>
+    <a href="./roles-previledges.html" id="icon-roles" class="shortcut tooltip-link" title="Roles & Privileges">Users<img src="templates/backend/images/shortcuts/roles.png" alt="roles" /></a>
+      <a href="./edit-admin-account.html" id="icon-my-account" class="shortcut tooltip-link" title="My Account">My Account<img src="templates/backend/images/shortcuts/my_account.png" alt="my account" /></a>
+      <a href="#" id="icon-languages" class="shortcut tooltip-link" title="Map">Payments<img src="templates/backend/images/shortcuts/languages.png" alt="languages" /></a>
+       <a href="#" id="icon-vocabulary" class="shortcut tooltip-link" title="User contacts">History<img src="templates/backend/images/shortcuts/vocabulary.png" alt="vocabulary" /></a>
+        <a href="module-mgt.html" id="icon-modules" class="shortcut tooltip-link" title="Modules">Modules<img src="templates/backend/images/shortcuts/modules.png" alt="modules" /></a>
+
+
+        <a href="./admin-sitesettings.html" id="icon-backend" class="shortcut tooltip-link" title="General Settings">Settings<img src="templates/backend/images/shortcuts/settings.png" alt="settings" /></a>
+                <a href="./backend-menusettings.html" id="icon-backend-menus" class="shortcut tooltip-link" title="Backend Menu">Manage Pages <img src="templates/backend/images/shortcuts/backend-menus.png" alt="backend menu" /></a>
+                  <a href="./admin-frontend-anchor-settings.html" id="icon-frontend-menus" class="shortcut tooltip-link" title="Frontend Menu">Manage Staff<img src="templates/backend/images/shortcuts/frontend-menus.png" alt="frontend menu" /></a>
+                  <a href="./location-settings.html" id="icon-locations" class="shortcut tooltip-link" title="Locations">Locations<img src="templates/backend/images/shortcuts/locations.png" alt="locations" /></a>
+                  <a href="./currency-settings.html" id="icon-currencies" class="shortcut tooltip-link" title="Currencies">Currencies<img src="templates/backend/images/shortcuts/currencies.png" alt="currencies" /></a>
+		<a href="./admin-accounts.html" id="icon-admins" class="shortcut tooltip-link" title="Admins">Admins<img src="templates/backend/images/shortcuts/admins.png" alt="admins" /></a>
+    	<a href="./roles-previledges.html" id="icon-roles" class="shortcut tooltip-link" title="Roles & Privileges">Users<img src="templates/backend/images/shortcuts/roles.png" alt="roles" /></a>
+    		<a href="./edit-admin-account.html" id="icon-my-account" class="shortcut tooltip-link" title="My Account">My Account<img src="templates/backend/images/shortcuts/my_account.png" alt="my account" /></a>
+        <a href="#" id="icon-languages" class="shortcut tooltip-link" title="Map">Payments<img src="templates/backend/images/shortcuts/languages.png" alt="languages" /></a>
+         <a href="#" id="icon-vocabulary" class="shortcut tooltip-link" title="User contacts">History<img src="templates/backend/images/shortcuts/vocabulary.png" alt="vocabulary" /></a>
+          <a href="module-mgt.html" id="icon-modules" class="shortcut tooltip-link" title="Modules">Modules<img src="templates/backend/images/shortcuts/modules.png" alt="modules" /></a>		        <div class="cb"></div>
+    </div>
+</div>
+
+<div class="bloc bloc-left" id="blocNews">
+    <div class="title collapsible">What's new</div>
+    <div class="content">
+	<b>No news yet...</b>    </div>
+</div>
+
+<div class="bloc bloc-right" id="blocStatistics">
+    <div class="title collapsible">
+<div class="tabs static" id="blockStatistics">
+<a id="tabStat1_link" href="#tabStat1">General Info</a>
+<a id="tabStat2_link" href="#tabStat2">My Account</a>
+<a id="tabStat3_link" href="#tabStat3">Admins Statistics</a>
+</div>
+</div>
+<div class="content">
+<div id="tabStat1" style="display:block;"><table>
+        <tbody>
+            <tr>
+                <td width="40%">Today: </td>
+                <td><b>2019-11-17 00:41:30</b></td>
+            </tr>
+            <tr>
+                <td>Application: </td>
+                <td><b>Commute Taxi</b></td>
+            </tr>
+            <tr>
+                <td>Version: </td>
+                <td><b>1.1.2</b></td>
+            </tr>
+        </tbody>
+        </table></div>
+<div id="tabStat2" style="display:block;"><table>
+        <tbody>
+            <tr>
+                <td width="40%">Last Login: </td>
+                <td><b>Never</b></td>
+            </tr>
+        </tbody>
+        </table></div>
+<div id="tabStat3" style="display:block;"><table>
+    <tbody>
+            <tr>
+                <td width="40%">Total Admins: </td>
+                <td><b>1</b></td>
+            </tr>
+            <tr>
+                <td>Last 5 registered admins: </td>
+                <td><b>saladin</b></td>
+            </tr>
+        </tbody>
+        </table></div>
+</div>
+</div>
+
+<div class="cb"></div>
+
+    </div>

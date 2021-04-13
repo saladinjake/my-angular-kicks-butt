@@ -5,15 +5,30 @@ import { RouterModule } from '@angular/router';
 
 
 //core routable  component
+// import { SigninComponent } from './components/signin/signin.component';
+// import { SignupComponent } from './components/signup/signup.component';
+// import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
+
 import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about/about.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component'
+
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 import { IdlestateComponent } from './components/idlestate/idlestate.component';
+import { EndusercontrollerComponent } from './components/endusercontroller/endusercontroller.component';
+import { TermscontrollerComponent } from './components/termscontroller/termscontroller.component';
+import { TradeproductcontrollerComponent } from './components/tradeproductcontroller/tradeproductcontroller.component';
+
 
 
 //presentational component
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+
+import { LoadingComponent } from './components/loading/loading.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AdminheaderComponent } from './components/header/adminheader/adminheader.component';
 import { UserheaderComponent } from './components/header/userheader/userheader.component';
@@ -31,19 +46,19 @@ import { CarouselComponent } from './components/widgets/carousel/carousel.compon
 import { ModalComponent } from './components/widgets/modal/modal.component';
 import { ProductComponent } from './components/widgets/product/product.component';
 import { CardboxComponent } from './components/widgets/cardbox/cardbox.component';
-import { LoadingComponent } from './loading/loading.component';
+
 
 //main layout component
 import { CoreComponent } from './core.component';
 import { CoreRoutingModule } from './routes/core-routing.module';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
     CoreRoutingModule,
@@ -51,6 +66,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [
     //presentational components
+    LoadingComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
@@ -69,13 +85,26 @@ import { HttpClientModule } from '@angular/common/http';
     CardboxComponent,
 
     //routable components
+
     LoginComponent,
     RegisterComponent,
+    UserProfileComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
     IdlestateComponent,
+    AboutComponent,
 
     CoreComponent,
+    LandingpageComponent,
+    EndusercontrollerComponent,
+    TermscontrollerComponent,
+    TradeproductcontrollerComponent,
+  ],
+
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
